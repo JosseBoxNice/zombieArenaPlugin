@@ -1,0 +1,6 @@
+name: zombieArenaPlugin
+version: 1.0.0
+main: io.github.josseboxnice.zombieArenaPlugin.zombieArenaPlugin
+description: Plugin for zombie arena minigame server
+author: Joosua Virtanen
+api-version: "26.3"
