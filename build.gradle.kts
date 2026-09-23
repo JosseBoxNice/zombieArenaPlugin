@@ -18,7 +18,19 @@ plugins {
   java
 }
 
+group = "io.github.josseboxnice"
+version = "1.0.1"
+
 tasks {
+  jar {
+    archiveFileName.set("ZombieArenaPlugin-${project.version}.jar")
+  }
+
+  processResources {
+      filesMatching("plugin.yml") {
+          expand("version" to project.version)
+      }
+  }
   runServer {
     // Configure the Minecraft version for our task.
     // This is the only required configuration besides applying the plugin.
@@ -26,3 +38,4 @@ tasks {
     minecraftVersion("26.3")
   }
 }
+
