@@ -1,2 +1,3 @@
 clearItemsOnDeath: true
 allowDroppingItems: true
+dropXPOnDeath: false
