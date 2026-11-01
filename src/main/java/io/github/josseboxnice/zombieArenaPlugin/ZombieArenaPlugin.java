@@ -1,6 +1,5 @@
 package io.github.josseboxnice.zombieArenaPlugin;
 
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,16 +8,16 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.entity.Player;
 
+import io.github.josseboxnice.zombieArenaPlugin.commands.ZombieArenaCommand;
 
-public class zombieArenaPlugin extends JavaPlugin implements Listener {
+public final class ZombieArenaPlugin extends JavaPlugin implements Listener {
   @Override
   public void onEnable() {
     saveDefaultConfig();
-
+    getLogger().info("PLUGIN ENABLED!");
+    this.registerCommand("zombiearena", new ZombieArenaCommand());
+    getLogger().info("PLUGIN ENABLED!");
     Bukkit.getPluginManager().registerEvents(this, this);
   }
 
@@ -38,7 +37,7 @@ public class zombieArenaPlugin extends JavaPlugin implements Listener {
     if (this.getConfig().getBoolean("allowDroppingItems")) {
       return;
     }
-    
+
     event.setCancelled(true);
   }
 
@@ -50,5 +49,5 @@ public class zombieArenaPlugin extends JavaPlugin implements Listener {
     if (!this.getConfig().getBoolean("dropXPOnDeath")) {
       event.setShouldDropExperience(false);
     }
-  } 
+  }
 }

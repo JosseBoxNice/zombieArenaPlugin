@@ -1,6 +1,14 @@
 name: ZombieArenaPlugin
 version: ${version}
-main: io.github.josseboxnice.zombieArenaPlugin.zombieArenaPlugin
+main: io.github.josseboxnice.zombieArenaPlugin.ZombieArenaPlugin
 description: Plugin for zombie arena minigame server
 author: Joosua Virtanen
 api-version: "26.3"
+
+commands:
+  zombiearena:
+    description: Parent command for all commands in ZombieArenaPlugin
+    usage: "/zombiearena <role>"
+    aliases: ["za"]
+    permission: op
+    permission-message: "You need to be a server operator to use this command"
