@@ -15,9 +15,10 @@ public final class ZombieArenaPlugin extends JavaPlugin implements Listener {
   @Override
   public void onEnable() {
     saveDefaultConfig();
-    getLogger().info("PLUGIN ENABLED!");
-    this.registerCommand("zombiearena", new ZombieArenaCommand());
-    getLogger().info("PLUGIN ENABLED!");
+
+    this.registerCommand("zombiearena", new ZombieArenaCommand(this));
+    this.registerCommand("za", new ZombieArenaCommand(this));
+
     Bukkit.getPluginManager().registerEvents(this, this);
   }
 
